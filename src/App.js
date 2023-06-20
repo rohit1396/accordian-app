@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import data from "./data";
 import Question from "./Question";
@@ -6,6 +6,10 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [questions, setQuestions] = useState(data);
+
+  useEffect(() => {
+    setQuestions(data);
+  }, []);
   return (
     <main className="container-lg my-5 App">
       <section className="row justify-content-center ">
